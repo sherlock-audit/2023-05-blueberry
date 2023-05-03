@@ -6,7 +6,7 @@
 - [Read for more details](https://docs.sherlock.xyz/audits/watsons)
 
 ## Quick Note
-There was a mistake in scoping for Blueberry Update #1 (too many new contracts in scope for the short contest length), so Blueberry Update #2 (this contest) is meant to be a continuation of Blueberry Update #1 (same scope, except CurveSpell.sol is removed), and the issues expected to be valid in Blueberry Update #1 (using a snapshot taken of the Lead Judge's judgments for Blueberry Update #1 on May 3, 2023) are not valid to submit in Blueberry Update #2. Please see the two tables under "Please list any known issues/acceptable risks that should not result in a valid finding" for a complete list of the 39 issues that are out-of-scope for this contest. 
+There was a scoping mistake in Blueberry Update #1 (too many new contracts in scope for the short contest length), so Blueberry Update #2 (this contest) is meant to be a continuation of Blueberry Update #1 (same scope, except CurveSpell.sol is removed), and the issues expected to be valid in Blueberry Update #1 (using a snapshot taken of the Lead Judge's judgments for Blueberry Update #1 on May 3, 2023) are not valid to submit in Blueberry Update #2. Please see the two tables under "Please list any known issues/acceptable risks that should not result in a valid finding" for a complete list of the 39 issues that are out-of-scope for this contest. 
 
 
 # Q&A
