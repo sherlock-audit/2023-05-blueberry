@@ -116,5 +116,7 @@ ___
 - [blueberry-core/contracts/wrapper/WERC20.sol](blueberry-core/contracts/wrapper/WERC20.sol)
 - [blueberry-core/contracts/wrapper/WIchiFarm.sol](blueberry-core/contracts/wrapper/WIchiFarm.sol)
 
+# Known issues
 
+https://github.com/sherlock-audit/2023-04-blueberry-judging#readme
 
