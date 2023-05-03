@@ -5,6 +5,10 @@
 - Submit findings using the issue page in your private contest repo (label issues as med or high)
 - [Read for more details](https://docs.sherlock.xyz/audits/watsons)
 
+## Quick Note
+There was a mistake in scoping for Blueberry Update #1 (too many new contracts in scope for the short contest length), so Blueberry Update #2 (this contest) is meant to be a continuation of Blueberry Update #1 (same scope, except CurveSpell.sol is removed), and the issues expected to be valid in Blueberry Update #1 (using a snapshot taken of the Lead Judge's judgments for Blueberry Update #1 on May 3, 2023) are not valid to submit in Blueberry Update #2. Please see the two tables under "Please list any known issues/acceptable risks that should not result in a valid finding" for a complete list of the 39 issues that are out-of-scope for this contest. 
+
+
 # Q&A
 
 ### Q: On what chains are the smart contracts going to be deployed?
@@ -54,42 +58,58 @@ ___
 
 - Centralization risk is known: the DAO multi-sig for the protocol is able to set the various configurations for the protocol. 
 
-- Items from Blueberry Update #1 through Sherlock (https://github.com/sherlock-audit/2023-04-blueberry-judging) Any findings that are to be found inside of this judging repo are out of scope for this current Update. The full list will be revealed prior to the contest start.
+**Please note: There are 2 lists of out-of-scope issues for this contest (39 out-of-scope issues in total):** 
 
-- https://github.com/sherlock-audit/2023-04-blueberry-judging#readme
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/4
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/10
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/15
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/28
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/41
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/46
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/47
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/48
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/64
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/77
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/97
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/115
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/117
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/118
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/120
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/121
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/122
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/123
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/124
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/125
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/126
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/127
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/128
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/129
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/131
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/132
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/133
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/135
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/136
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/137
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/141
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/142
-- https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/145
+- The first list of 6 issues were labeled "Won't Fix" in the first Blueberry contest:
+
+| Issue description | GitHub Issue |
+| - | - |
+| ChainlinkAdapterOracle use BTC/USD chainlink oracle to price WBTC which is problematic if WBTC depegs | [Link](https://github.com/sherlock-audit/2023-02-blueberry-judging/issues/9) |
+| ChainlinkAdapterOracle will return the wrong price for asset if underlying aggregator hits minAnswer | [Link](https://github.com/sherlock-audit/2023-02-blueberry-judging/issues/18) |
+| LP tokens cannot be valued because ICHI cannot be priced by oracle, causing all new open positions to revert | [Link](https://github.com/sherlock-audit/2023-02-blueberry-judging/issues/152) |
+| Complete debt size is not paid off for fee on transfer tokens, but users aren't warned | [Link](https://github.com/sherlock-audit/2023-02-blueberry-judging/issues/153) |
+| If a token's oracle goes down or price falls to zero, liquidations will be frozen | [Link](https://github.com/sherlock-audit/2023-02-blueberry-judging/issues/161) |
+| The maximum size of an `ICHI` vault spell position can be arbitrarily surpassed | [Link](https://github.com/sherlock-audit/2023-02-blueberry-judging/issues/327) |
+  
+- The second list of 33 issues are those expected to be rewarded from Blueberry Update #1:
+
+| Issue description | GitHub Issue |
+| - | - |
+| Borrower can't repay but can be liquidated as token whitelist can prevent existing positions from repaying | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/4) |
+| Accrue function is not called before executing some functions | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/10) |
+| Transaction will revert when using USDT tokens (or other non-compliant ERC20 tokens) | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/15) |
+| IchiVaultOracle getPrice will fail during price crashes | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/28) |
+| auraPools.deposit and auraPools.withdraw  boolean return value not handled in WAuraPools.sol | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/41) |
+| AuraSpell openPositionFarm does not join pool | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/46) |
+| The protocol  will not be able to add liquidity on the curve with another token with a balance. | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/47) |
+| Dos attack to openPositionFarm() | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/48) |
+| Users can fail to closePositionFarm and lose their funds | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/64) |
+| Potential DOS / lack of acccess to oracle price due to unhandled chainlink revert | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/77) |
+| `getPositionRisk()` will return a wrong value of risk | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/97) |
+| BlueBerryBank#getPositionValue causes DOS if reward token is added that doens't have an oracle | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/115) |
+| Issue 290 from previous contest has not been fully addressed by fixes | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/117) |
+| Issue 94 from previous contest has not been fixed | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/118) |
+| AuraSpell#openPositionFarm uses incorrect join type for balancer | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/120) |
+| Users are forced to swap all reward tokens with no slippage protection | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/121) |
+| AuraSpell#closePositionFarm requires users to swap all reward tokens through same router | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/122) |
+| Potential flash loan attack vulnerability in `getPrice` function of CurveOracle | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/123) |
+| ConvexSpell#closePositionFarm removes liquidity without any slippage protection | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/124) |
+| Issue 327 from previous contest has not been fixed | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/125) |
+| ShortLongSpell#_withdraw checks slippage limit but never applies it making it useless | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/126) |
+| WAuraPools will irreversibly break if reward tokens are added to pool after deposit | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/127) |
+| rewardTokens removed from WAuraPool/WConvexPools will be lost forever | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/128) |
+| UserData for balancer pool exits is malformed and will permanently trap users | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/129) |
+| IchiSpell applies slippage to sqrtPrice which is wrong and leads to unpredictable slippage | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/131) |
+| UniswapV3 sqrtRatioLimit doesn't provide slippage protection and will result in partial swaps | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/132) |
+| Balance check for swapToken in ShortLongSpell#_deposit is incorrect and will result in nonfunctional contract | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/133) |
+| ShortLongSpell#openPosition can cause user unexpected liquidation when increasing position size | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/135) |
+| Pending CRV rewards are not accounted for and can cause unfair liquidations | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/136) |
+| WIchiFarm#pendingRewards suffers from significant precision loss causing loss of rewards | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/137) |
+| `BalancerPairOracle` can be manipulated using read-only reentrancy | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/141) |
+| Missing checks for whether Arbitrum Sequencer is active | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/142) |
+| Deadline check is not effective, allowing outdated slippage and allow pending transaction to be unexpected executed | [Link](https://github.com/sherlock-audit/2023-04-blueberry-judging/issues/145) |
+
+Note: Why so many out-of-scope issues? There was a mistake in scoping for Blueberry Update #1 (too many new contracts in scope for the short contest length), so Blueberry Update #2 (this contest) is really just a continuation of Blueberry Update #1 (same scope, except CurveSpell.sol is removed), except the issues expected to be valid in Blueberry Update #1 (using a snapshot taken of the Lead Judge's judgments on May 3, 2023) are not valid to submit in Blueberry Update #2. 
 ___
 
 ### Q: Please provide links to previous audits (if any).
